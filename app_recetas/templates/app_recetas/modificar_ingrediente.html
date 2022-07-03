@@ -1,0 +1,21 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h3>Modificar ingrediente</h3>
+
+<form action="{% url 'modificar_ingrediente' ingrediente.nombre %}" method="POST" class="tabla">{% csrf_token %}
+    
+    <table>
+
+        {{n_ingrediente.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar" class="boton">
+
+</form>
+
+{% endblock %}

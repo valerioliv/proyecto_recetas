@@ -1,0 +1,32 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h3> Listado de Recetas </h3>
+
+<div class="container" id="recetasCards">
+    <div class="row">
+      {% for n in datos %}
+      <div class="col-sm-4 mb-4">
+        <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body" style="height: 400px;">
+          <h4 class="card-title">{{n.nombre}}</h4>
+          <p>Tiempo de preparación: {{n.tiempo}} minutos</p>
+          <p>Ingredientes: {{n.ingrediente_uno}}, {{n.ingrediente_dos}}, {{n.ingrediente_tres}}</p>
+          <p class="card-text">{{n.descripcion}}</p>          
+        </div>
+        <a href="{% url 'modificar_receta' n.nombre %}" class="btn btn-primary" id="recetasBtn">¡Modificar esta receta!</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'nueva_receta' %}" class="btn btn-primary" id="recetasBtn">¡Agrega una nueva receta!</a></div></div>
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'busqueda_receta' %}" class="btn btn-primary" id="recetasBtn">¡Busca una receta!</a></div></div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section class="alto">
+<h3>Nueva Receta</h3>
+
+<form action="" method="POST" class="tabla">{% csrf_token %}
+    
+    <table>
+
+        {{n_receta.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+
+</form>
+</section>
+{% endblock %}

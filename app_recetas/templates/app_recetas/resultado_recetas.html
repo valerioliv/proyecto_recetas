@@ -1,0 +1,32 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h3>Estos son las recetas que hemos encontrado con {{ingrediente_uno}}:</h3>
+
+{% if recetas %}
+
+<ul>
+    {% for receta in recetas %}
+    <div class="col-sm-4 mb-4">
+        <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body" style="height: 350px;">
+          <h4 class="card-title">{{receta.nombre}}</h4>
+          <p>Tiempo de preparación: {{receta.tiempo}} minutos</p>
+          <p>Ingredientes: {{receta.ingrediente_uno}}, {{receta.ingrediente_dos}}, {{receta.ingrediente_tres}}</p>
+          <p class="card-text">{{receta.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</ul>
+{% else %}
+    <h3>No se encontraron recetas</h3>
+{% endif %}
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'busqueda_receta' %}" class="btn btn-primary" id="recetasBtn">¡Seguir buscando!</a></div></div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h3>{{mensaje}}</h3>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'login' %}" class="btn btn-primary" id="recetasBtn">¡Iniciar sesion!</a></div></div>
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'register' %}" class="btn btn-primary" id="recetasBtn">¡Registrate!</a></div></div>
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'inicio' %}" class="btn btn-primary" id="recetasBtn">¡Volver al inicio!</a></div></div>
+
+
+{% endblock %}

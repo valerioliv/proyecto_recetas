@@ -1,0 +1,12 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+<h3> Gracias por visitarnos! Te esperamos pronto! </h3>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'inicio' %}" class="btn btn-primary" id="recetasBtn">¡Volver al inicio!</a></div></div>
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'login' %}" class="btn btn-primary" id="recetasBtn">¡Iniciar sesion!</a></div></div>
+</section>
+{% endblock %}

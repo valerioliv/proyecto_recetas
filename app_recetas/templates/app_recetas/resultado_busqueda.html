@@ -1,0 +1,30 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<main>
+<h3> Listado de Recetas </h3>
+
+{% if recetas %}
+
+<div class="container" id="recetasCards">
+    <div class="row">
+      {% for n in recetas %}
+        <div class="col-sm-4">
+          <div class="card" style="width: 18rem;">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body" style="height: 350px;">
+            <h4 class="card-title">{{n.nombre}}</h4>
+            <p>Tiempo de preparación: {{n.preparacion}} minutos</p>
+            <p>Ingredientes: {{n.ingrediente_principal}}, {{n.ingrediente_secundario}}, {{n.ingrediente_terciario}}</p>
+            <p class="card-text">{{n.breve_descripcion}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+{% else %}
+    <p>No se encontraron recetas</p>
+{% endif %}
+
+{% endblock %}

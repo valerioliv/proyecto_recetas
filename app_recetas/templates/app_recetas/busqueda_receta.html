@@ -1,0 +1,16 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section class="alto">
+<h3>Buscar receta!</h3>
+
+<form action="/app_recetas/buscar_receta/" method="GET" class="tabla">
+    <p>Ingrediente principal: <input type="text" name="ingrediente_uno" id="ingrediente_uno"></p>
+    
+    <input type="submit" value="Buscar" class="boton">
+
+</form>
+</section>
+{% endblock %}

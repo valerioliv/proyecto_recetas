@@ -1,0 +1,21 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section class="alto">
+<h3>Editar perfil {{usuario}}: {{mensaje}}</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+{{formulario.as_p}}
+
+<button type="submit" class="btn btn-primary">¡Guardar cambios!</button>
+
+</form>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'inicio' %}" class="btn btn-primary" id="recetasBtn">¡Volver al inicio!</a></div></div>
+
+</section>
+{% endblock %}

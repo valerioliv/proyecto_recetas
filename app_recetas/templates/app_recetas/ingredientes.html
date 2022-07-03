@@ -1,0 +1,32 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<h3> Listado de Ingredientes </h3>
+
+<div class="container" id="recetasCards">
+    <div class="row">
+      {% for n in datos %}
+      <div class="col-sm-4 mb-4">
+        <div class="card" style="width: 18rem;">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body" style="height: 150px;">
+          <h4 class="card-title">{{n.nombre}}</h4>
+          <p>Tipo de alimento: {{n.tipo}}</p>
+          <p>Conservacion: {{n.conservacion}}</p>
+          <p style="display: none ;">Id: {{n.id}}</p>
+        </div>
+        <a href="{% url 'modificar_ingrediente' n.nombre %}" class="btn btn-primary" id="recetasBtn">¡Modificar este ingrediente!</a>
+        <a href="{% url 'borrar_ingrediente' n.id %}" class="btn btn-primary" id="recetasBtn">¡Eliminar este ingrediente!</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'nuevo_ingrediente' %}" class="btn btn-primary" class="aBtn">¡Agrega un nuevo ingrediente!</a></div></div>
+
+
+{% endblock %}

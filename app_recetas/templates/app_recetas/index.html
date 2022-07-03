@@ -1,0 +1,27 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+  <div class="displaySection">
+    <img src="{% static '/app_recetas/img/fondo.jpg' %}" alt="">
+    <h3 class="tituloIndex">Y hoy... qué comemos?</h3>
+    <h5 class="subtituloIndex">Es tal vez una de las preguntas que más se pregunta las personas del todo el mundo a diario... Cómo podemos usar nuestra imaginación a diario, más de una vez por día,
+      para inventarnos un plato diferente, nutritivo, fácil de preparar y rápido?</h5>
+    <div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'recetas'%}" class="btn btn-primary" id="recetasBtn">¡Buscar recetas!</a></div>
+    </div>
+    
+  </div>
+
+<!-- INDEX INGREDIENTES -->
+  <div class="displaySection">
+    <h3 class="tituloIndex">No hay nada en la heladera!</h3>
+    <h5 class="subtituloIndex">Buscar, buscar, recorrer siempre los mismos ingredientes. Pero cocinar es más simple,
+      es el arte de combinar lo incombinable para crear un plato... que relativamente zafe!</h5>
+    <div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'ingredientes'%}" class="btn btn-primary" id="recetasBtn">¡Ingredientes!</a></div></div>
+    
+{% endblock %}
+
+

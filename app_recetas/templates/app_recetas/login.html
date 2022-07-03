@@ -1,0 +1,23 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<section class="medio">
+<h3> Ingresa a nuestra web! {{mensaje}}</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+
+{{form.as_p}}
+
+<button type="" class="btn btn-primary">¡Iniciar sesión!</button>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'register' %}" class="btn btn-primary" id="recetasBtn">¡Registrate!</a></div></div>
+
+<div style="height: 60px;" class="indexDisplayBtn"><a href="{% url 'inicio' %}" class="btn btn-primary" id="recetasBtn">¡Volver al inicio!</a></div></div>
+
+
+</form>
+</section>
+{% endblock %}

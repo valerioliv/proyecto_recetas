@@ -1,0 +1,21 @@
+{% extends "app_recetas/padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+<h3>Tu mensaje nos ayuda a mejorar día a día!</h3>
+
+<form action="" method="POST" class="tabla">{% csrf_token %}
+    
+    <table>
+
+        {{n_usuario.as_table}}
+
+    </table>
+
+    <button type="submit" class="btn btn-primary">¡Enviar mensaje!</button>
+
+</form>
+</section>
+{% endblock %}
